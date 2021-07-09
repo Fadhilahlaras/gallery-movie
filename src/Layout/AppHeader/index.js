@@ -7,12 +7,6 @@ import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
 import HeaderLogo from '../AppLogo';
 
-import SearchBox from './Components/SearchBox';
-import MegaMenu from './Components/MegaMenu';
-import UserBox from './Components/UserBox';
-
-import HeaderDots from "./Components/HeaderDots";
-
 class Header extends React.Component {
     constructor(props) {
         super(props);
@@ -20,15 +14,13 @@ class Header extends React.Component {
 
     render() {
         let {
-            headerBackgroundColor,
-            enableMobileMenuSmall,
             enableHeaderShadow
         } = this.props;
         return (
             <Fragment>
                 <CSSTransitionGroup
                     component="div"
-                    className={cx("app-header", headerBackgroundColor, {'header-shadow': enableHeaderShadow})}
+                    className={cx("app-header", {'header-shadow': enableHeaderShadow})}
                     transitionName="HeaderAnimation"
                     transitionAppear={true}
                     transitionAppearTimeout={1500}
@@ -36,23 +28,8 @@ class Header extends React.Component {
                     transitionLeave={false}>
 
                     <HeaderLogo/>
+                    <h4 style={{marginLeft:"15px"}}> The Movie Search</h4>
 
-
-                    <div className={cx(
-                        "app-header__content",
-                        {'header-mobile-open': enableMobileMenuSmall},
-                    )}>
-
-                        <div className="app-header-left">
-                            <MegaMenu/>
-                        </div>
-
-
-                        <div className="app-header-right">
-                            <SearchBox/>
-                            <UserBox/>
-                        </div>
-                    </div>
 
                 </CSSTransitionGroup>
             </Fragment>
@@ -62,9 +39,6 @@ class Header extends React.Component {
 
 const mapStateToProps = state => ({
     enableHeaderShadow: state.ThemeOptions.enableHeaderShadow,
-    closedSmallerSidebar: state.ThemeOptions.closedSmallerSidebar,
-    headerBackgroundColor: state.ThemeOptions.headerBackgroundColor,
-    enableMobileMenuSmall: state.ThemeOptions.enableMobileMenuSmall,
 });
 
 const mapDispatchToProps = dispatch => ({});

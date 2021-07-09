@@ -1,12 +1,8 @@
 import React, {Fragment, useEffect, useState} from "react";
 import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
-// import AppHeader from "../../../Layout/AppHeader"
+
 import {Row, CardBody} from "reactstrap";
 import bg1 from "../../../assets/utils/images/originals/city.jpg";
-import axios from "axios";
-import KartuMovie from "../../Movie/Kartu";
-import KartuTv from "../../Tvshows/Kartu";
-
 import $ from 'jquery'
 
 import MovieRow from "../../../MovieRow";
