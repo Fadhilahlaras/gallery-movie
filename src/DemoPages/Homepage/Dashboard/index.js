@@ -5,7 +5,7 @@ import {Row, CardBody} from "reactstrap";
 import bg1 from "../../../assets/utils/images/originals/city.jpg";
 import $ from 'jquery'
 
-import MovieRow from "../../../MovieRow";
+import MovieRow from "../ListMovie/MovieRow";
 
 
 class Dashboard extends React.Component {
